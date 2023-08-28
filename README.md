@@ -1,3 +1,10 @@
+# Coding4Kids
+
+1. Install NodeJS: https://nodejs.org/de/download
+2. Download this as ZIP
+3. Download VSCode: https://code.visualstudio.com/
+
+---
 This project was bootstrapped with [Create Eth App](https://github.com/paulrberg/create-eth-app).
 
 ## Project Structure
