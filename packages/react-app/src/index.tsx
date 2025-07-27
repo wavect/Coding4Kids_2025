@@ -1,23 +1,23 @@
 import "./index.css";
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { Chain, DAppProvider, DEFAULT_SUPPORTED_CHAINS } from "@usedapp/core";
+import { Chain, DAppProvider, DEFAULT_SUPPORTED_CHAINS, Sepolia } from "@usedapp/core";
 import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
 
 const Boba: Chain = {
-  chainId: 2888,
-  chainName: 'Boba Goerli',
+  chainId: 11155111,
+  chainName: 'Sepolia',
   isTestChain: true,
   isLocalChain: false,
-  multicallAddress: '0xFB552029226c907b54fD272C04724CC674058827',
-  getExplorerAddressLink: (address: string) => `https://testnet.bobascan.com/address/${address}`,
-  getExplorerTransactionLink: (transactionHash: string) => `https://testnet.bobascan.com/tx/${transactionHash}`,
+  multicallAddress: '0x0000000000000000000000000000000000000000',
+  getExplorerAddressLink: (address: string) => `https://sepolia.etherscan.io/address/${address}`,
+  getExplorerTransactionLink: (transactionHash: string) => `https://sepolia.etherscan.io/tx/${transactionHash}`,
   // Optional parameters:
-  rpcUrl: 'https://goerli.boba.network',
-  blockExplorerUrl: 'https://testnet.bobascan.com/',
+  rpcUrl: 'https://ethereum-sepolia-rpc.publicnode.com',
+  blockExplorerUrl: 'https://sepolia.etherscan.io/',
   nativeCurrency: {
     name: 'Ethereum',
     symbol: 'ETH',
@@ -26,9 +26,9 @@ const Boba: Chain = {
 }
 
 const config = {
-  readOnlyChainId: Boba.chainId,
+  readOnlyChainId: Sepolia.chainId,
   readOnlyUrls: {
-    [Boba.chainId]: Boba.rpcUrl,
+    [Sepolia.chainId]: Sepolia.rpcUrl,
   },
   networks: [...DEFAULT_SUPPORTED_CHAINS, Boba]
 }
